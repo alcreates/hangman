@@ -16,6 +16,8 @@ var game = {
 	  
 	  lettersGuess: " ",
 
+	  guessLeft: 15
+
 
 };
 
@@ -78,13 +80,14 @@ document.onkeyup = function(event){
 			}	
 		;
 
-		if (game.rapper === game.wordPlaceHolder){
+		if (game.rapper === game.wordPlaceHolder && game.guessCount <= 15){
 			alert("You win!!")
 			game.wordPlaceHolder = ""
 			game.winCount += 1
 			game.lettersGuess = ""
 			game.guessCount = 0
 			game.rapper = ""
+			game.guessLeft = 15
 			
 			
 			
@@ -92,9 +95,13 @@ document.onkeyup = function(event){
 
 
 	game.guessCount+= 1
+	document.querySelector("#guessCount").innerHTML = game.guessCount
+			
 	game.lettersGuess += userGuess
-	
-
+	document.querySelector("#letterGuess").innerHTML = game.lettersGuess
+			
+	game.guessLeft -= 1
+	document.querySelector("#remainingGuess").innerHTML = game.guessLeft
 
 
 	

@@ -34,6 +34,8 @@ document.onkeyup = function(event){
 	
 
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+
+
 	
 
 	if (game.rapper == ""){
@@ -64,6 +66,8 @@ document.onkeyup = function(event){
 			  alert("You Win!")
 			  game.wordPlaceHolder = []
 			  game.rapper = ""
+			  game.guessCount = 0
+			  game.letterGuess = ""
 			  break;
 
 		}else if(game.rapper[i] === userGuess && game.guessCount > 15){
@@ -71,7 +75,8 @@ document.onkeyup = function(event){
 			game.wordPlaceHolder = []
 			game.rapper = ""
 			break;
-		}else{
+		}else if (game.rapper[i] != userGuess){
+			alert( userGuess + "is not correct")
 			game.guessCount += 1
 			game.lettersGuess += userGuess
 			

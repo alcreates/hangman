@@ -46,9 +46,9 @@ document.onkeyup = function(event){
 
 	if (game.wordPlaceHolder == ""){
 
-		for (i= 0; i < game.rapper.length; i++){
+		for (i= 0; i < game.rapper.length - 1; i++){
 
-				game.wordPlaceHolder = game.wordPlaceHolder + "_" + " "
+				game.wordPlaceHolder = game.wordPlaceHolder + "_" 
 			};
 		document.querySelector("#placeHolder").innerHTML = game.wordPlaceHolder
 	};
@@ -57,37 +57,42 @@ document.onkeyup = function(event){
 		
 		if (game.rapper[i] === userGuess && game.guessCount < 15){
 			game.wordPlaceHolder= game.wordPlaceHolder.replaceAt(i ,game.rapper[i]);
-			game.guessCount+= 1
-			game.lettersGuess += userGuess
 			document.querySelector("#placeHolder").innerHTML = game.wordPlaceHolder
 			
-
-		}else if(game.rapper[i] === userGuess && game.rapper === game.wordPlaceHolder) {
-			  alert("You Win!")
-			  game.wordPlaceHolder = []
-			  game.rapper = ""
-			  game.guessCount = 0
-			  game.letterGuess = ""
-			  break;
 
 		}else if(game.rapper[i] === userGuess && game.guessCount > 15){
 			alert("Sorry too Many Guesses.. GameOver! ")
 			game.wordPlaceHolder = []
 			game.rapper = ""
 			break;
-		}else if (game.rapper[i] != userGuess){
-			alert( userGuess + "is not correct")
-			game.guessCount += 1
-			game.lettersGuess += userGuess
+		}
+
+
+	};
+
+		if (game.rapper.includes(userGuess)){
+			alert( "You are correct !")
+			}
+		else{ 
+			alert("Sorry you are wrong !")
+			}	
+		;
+
+		if (game.rapper === game.wordPlaceHolder){
+			alert("You win!!")
+			game.wordPlaceHolder = ""
+			game.winCount += 1
+			game.lettersGuess = ""
+			game.guessCount = 0
+			game.rapper = ""
+			
 			
 			
 		};
 
 
-	};
-
-
-
+	game.guessCount+= 1
+	game.lettersGuess += userGuess
 	
 
 

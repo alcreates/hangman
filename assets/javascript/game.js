@@ -82,15 +82,30 @@ document.onkeyup = function(event){
 
 		if (game.rapper === game.wordPlaceHolder && game.guessCount <= 15){
 			alert("You win!!")
+			
+				if (game.rapper === "nas"){
+
+					document.querySelector("#pic_container").innerHTML = '<img src="assets/images/nas.jpg">'
+				}
+				else if (game.rapper === "jayz"){
+					document.querySelector("#pic_container").innerHTML = '<img src="assets/images/jayz.jpg">'
+				}
+				else if (game.rapper === "bigpun"){
+					document.querySelector("#pic_container").innerHTML = '<img src="assets/images/bigpun.jpg">'
+
+				}else if (game.rapper === "tupac"){
+					document.querySelector("#pic_container").innerHTML = '<img src="assets/images/tupac.jpg">'
+				}
+				else if (game.rapper === "biggiesmalls"){
+					document.querySelector("#pic_container").innerHTML = '<img src="assets/images/biggie.jpg">'
+				};
+			
 			game.wordPlaceHolder = ""
 			game.winCount += 1
 			game.lettersGuess = ""
 			game.guessCount = 0
 			game.rapper = ""
 			game.guessLeft = 15
-			
-			
-			
 		};
 
 

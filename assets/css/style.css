@@ -55,7 +55,7 @@ header span{
 }
 #game_board {
 
-	background-color: black;
+	background-color: yellow;
 	width: 500px;
 	height: 400px;
 	position: relative;
@@ -151,3 +151,31 @@ header span{
 	left:170px;
 
 }
+
+#big{
+
+	width: 400px;
+	height: 400px;
+}
+
+#jayz {
+	width: 400px;
+	height: 400px;
+}
+
+#nas {
+
+	width: 400px;
+	height: 400px;
+}
+#bigpun{
+
+	width: 400px;
+	height:400px;
+}
+#tupac {
+
+	width: 400px;
+	height:400px;
+}
+

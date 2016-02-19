@@ -85,19 +85,19 @@ document.onkeyup = function(event){
 			
 				if (game.rapper === "nas"){
 
-					document.querySelector("#pic_container").innerHTML = '<img src="assets/images/nas.jpg">'
+					document.querySelector("#pic_container").innerHTML = '<img src="assets/images/nas.jpg" id="nas"> <audio autoplay><source src="assets/audio/nas.m4a" type="audio/mpeg"></audio>'
 				}
 				else if (game.rapper === "jayz"){
-					document.querySelector("#pic_container").innerHTML = '<img src="assets/images/jayz.jpg">'
+					document.querySelector("#pic_container").innerHTML = '<img src="assets/images/jayz.jpg" id="jayz"><audio autoplay><source src="assets/audio/jayz.m4a" type="audio/mpeg"></audio>'
 				}
 				else if (game.rapper === "bigpun"){
-					document.querySelector("#pic_container").innerHTML = '<img src="assets/images/bigpun.jpg">'
+					document.querySelector("#pic_container").innerHTML = '<img src="assets/images/bigpun.jpg" id="bigpun"><audio autoplay><source src="assets/audio/bigpun.m4a" type="audio/mpeg"></audio>'
 
 				}else if (game.rapper === "tupac"){
-					document.querySelector("#pic_container").innerHTML = '<img src="assets/images/tupac.jpg">'
+					document.querySelector("#pic_container").innerHTML = '<img src="assets/images/tupac.jpg" id = "tupac"><audio autoplay><source src="assets/audio/tupac.m4a" type="audio/mpeg"></audio>'
 				}
 				else if (game.rapper === "biggiesmalls"){
-					document.querySelector("#pic_container").innerHTML = '<img src="assets/images/biggie.jpg">'
+					document.querySelector("#pic_container").innerHTML = '<img src="assets/images/biggie.jpg" id="big"><audio autoplay><source src="assets/audio/biggie.m4a" type="audio/mpeg"></audio>'
 				};
 			
 			game.wordPlaceHolder = ""

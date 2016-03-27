@@ -1,34 +1,86 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
+
 <head>
-	<title>90's HipHoP Hangman</title>
-	
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+    <title>90's HipHoP Hangman</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
 </head>
+
 <body>
-	<script src="assets/javascript/game.js"></script>
-	<header> <span>90's HipHop hangman</span></header>
-	
-
-	<div id="container">
-		<h1>Welcome. Let's Play !<h1>
-			<h2>Press and Key to Start</h2>
- 		<div id="pic_container"></div>
-
- 		<div id="game_board">
- 			<div id="placeHolder"></div>
- 			<div id="letterGuess"></div>
- 			<div id="guessCount"></div>
- 			<div id="remainingGuess"></div>
- 			<p id="trysLeft">Guesses Left!</p>
- 			<p id="trysTaken">Guesses Taken</p>
- 			<p id="plays">Your plays so far..</p>
-
- 		</div>
-
-	</div>
-
+    <nav>
+        <div class="nav-wrapper deep-purple darken-4">
+            <a href="#" class="brand-logo left ">90's hipHop hangMan Game</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div id="topDivider"></div>
+        </div>
+        <div class="row">
+            <div class="row">
+                <div class="col s12 m12">
+                    <div class="card deep-purple darken-4">
+                        <div class="card-content white-text">
+                            <span class="card-title">let's play</span>
+                            <div class="row">
+                                <div class="col s5 m5">
+                                    <div class="card-panel amber accent-3 " id="rapperImage">
+                                    </div>
+                                    <a id="startButton"class="waves-effect waves-light btn red darken-4 ">start</a>
+                                </div>
+                                <div class="col s7 m7">
+                                    <div class="card-panel amber accent-3 center-align" id="playerBoard">
+										<div class="row">
+										<div class="col m12 s12">
+                                        <div  id="placeHolder"></div>
+                                        </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s12 m12 ">
+                                                <div class="card-panel red darken-4"id="letterGuess" >
+                                                    <span class="white-text "> </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s4 m4 ">
+                                            <div class="card-panel amber accent-3 update">
+                                                <span class="updateText"> guesses taken</span>
+                                                <div class="divider red darken-4"></div>
+                                                <div id="guessCount"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col s4 m4 ">
+                                            <div class="card-panel amber accent-3 update">
+                                                <span class="updateText"> guesses remaining</span>
+                                                <div class="divider red darken-4"></div>
+                                                <div id="remainingGuess"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col s4 m4 ">
+                                            <div class="card-panel amber accent-3 update">
+                                                <span class="updateText"> total wins</span>
+                                                <div class="divider red darken-4"></div>
+                                                <div id="totalWins"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <script src="assets/javascript/game.js"></script>
 </body>
+
 </html>

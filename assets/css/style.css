@@ -1,200 +1,67 @@
-body {
-	background-image: url("../images/hiphop2.jpg");
-}
-
-header {
-	position:relative;
-	
-	top:50px;
-	width: 75%;
-	height:200px;
-	background-image: url("../images/redbrick.jpeg");
-	text-align: center;
-	margin:auto;
-
-}
-
-header span{
-	
-	position:relative;
-	top:0px;
-	font-size: 120px;
-	color: black;
-	font-weight: 900;
-	font-family: 'Shadows Into Light', cursive;
-
-}
-
-#container {
-	top: 130px;
-	
-	position:relative;
-	width:1000px;
-	height: 700px;
-	background-color:;
-	margin:auto;
-	color:black;
-	border-style: solid;
-	border-radius: 25px;
-	background-image: url("../images/redbrick.jpeg");
-}
-#container h1 {
-	text-align: center;
-	font-family: 'Shadows Into Light', cursive;
-	font-size: 60px;
-	position:relative;
-	top: -10px;
-	font-weight: bolder;
 
 
-}
+#rapperImage{
 
-#container h2 {
-	text-align: center;
-	font-family: 'Shadows Into Light', cursive;
-	position: relative;
-	top:-50px;
-	font-weight: bolder;
-	color:white;
-}
-#pic_container {
-	background-color: white;
-	width: 400px;
-	height:400px;
-	position:relative;
-	left:30px;
-	top:-30px;
-	border-style: solid;
-	border-color: #ccc;
-	background-image: url("../images/90hiphop.jpg");
-	border-radius:25px;
-}
-#game_board {
-
-	background-color: black;
-	width: 500px;
 	height: 400px;
-	position: relative;
-	border-style: solid;
-	border-color:#ccc;
-	float:right;
-	top:-436px;
-	left: -27px;
-	border-radius:25px;
 
 }
+.update{
+	height: 125px;
+}
+
+#playerBoard {
+
+	height: 400px;
+}
+
+#topDivider{
+
+	height:100px;
+}
+
+
+
+
+
+
 #placeHolder {
-	width:400px;
+	
 	height:50px;
-	margin: auto;
+	
 	position: relative;
 	top: 30px;
-	color: red;
+	color:#311b92;
+	
 	font-size: 45px;
-	text-align: center;
+	
+}
+.updateText{
+	color:#b71c1c;
+	font-weight: bold;
+}
+.divider{
+	color:#b71c1c;
 }
 
 #letterGuess {
 
-	border-style: solid;
-	border-color: #ccc;
-	width: 400px;
-	height: 50px;
-	background-color: black;
-	margin:auto;
+	
 	position:relative;
-	top:130px;
-	color:red;
-	font-size:30px;
-	border-radius: 25px;
+	top:70px;
+	
 
 }
 
 #guessCount {
 
-	border-style: solid;
-	border-color: #ccc;
-	width:100px;
-	height: 100px;
-	background-color: black;
-	position: relative;
-	top: 175px;
-	left: 50px;
-	color:red;
-	font-size: 90px
+	
 
 }
 
-#remainingGuess{
-
-	border-style: solid;
-	border-color: #ccc;
-	width:100px;
-	height: 100px;
-	background-color: black;
-	position: relative;
-	top: 69px;
-	left: 345px;
-	color:red;
-	font-size: 90px
-
-}
-
-#trysTaken{
-	color:#ccc;
-	font-weight: bolder;
-	font-size:20px;
-	position:relative;
-	top: -130px;
-	left: 35px;
 
 
-}
 
-#trysLeft {
-	color:#ccc;
-	font-weight: bolder;
-	font-size: 20px;
-	position:relative;
-	top:-87px;
-	left: 345px;
 
-}
-#plays {
-	color:#ccc;
-	font-weight: bolder;
-	font-size: 20px;
-	position:relative;
-	margin:auto;
-	top :-270px;
-	left:170px;
 
-}
 
-#big{
-
-	width: 400px;
-	height: 400px;
-}
-
-#jayz {
-	width: 400px;
-	height: 400px;
-}
-
-#nas {
-
-	width: 400px;
-	height: 400px;
-}
-#bigpun{
-
-	width: 400px;
-	height:400px;
-}
-#tupac {
-
-	width: 400px;
-	height:400px;
-}
 

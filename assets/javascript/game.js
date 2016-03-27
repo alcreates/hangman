@@ -1,130 +1,187 @@
-window.onload = function() {
 
-var game = {
+// objec with game elements
 
-	  rappers : ["bigpun", "tupac", "biggiesmalls", "nas", "jayz"],
+
+	 var rappers =["bigpun", "tupac", "biggiesmalls", "nas", "jayz"]
 	  
+	 var rapper = ""
 	  
+	 var wordPlaceHolder = []
 	  
-	  rapper: "",
+	 var winCount = 0
 	  
-	  wordPlaceHolder : "",
+	  var guessCount = 0
 	  
-	  winCount : 0,
-	  
-	  guessCount: 0,
-	  
-	  lettersGuess: " ",
+	  var lettersGuess = " "
 
-	  guessLeft: 15
-
-
-};
+	  var guessLeft = 15
+	  var userGuess = null
 
 
 
-String.prototype.replaceAt=function(index, character) {
-    return this.substr(0, index) + character + this.substr(index+character.length);
+
+
+function newRappper(){
+	if (rapper == ""){
+
+		rapper = rappers[Math.floor( Math.random() * rappers.length)]
+	};
 }
 
 
 
+function startingSpaces(){
+	
+
+		for (i= 0; i < rapper.length ; i++){
+
+				wordPlaceHolder.push("_ ");
+				
+				
+			};
 
 
+		 
+	$("#placeHolder").html(wordPlaceHolder.join(" "));
+
+}
+
+function testGuess(){
+	var rapperSplit = rapper.split("");
+	var spacesSplit = wordPlaceHolder
+
+	for (var i = 0; i < rapper.length; i++) {
+		
+		if (rapperSplit[i] === userGuess && guessCount < 15 ){
+			spacesSplit[i] = rapperSplit[i];
+			
+			
+
+		}else if(rapper[i] === userGuess && guessCount > 15){
+			alert("Sorry too Many Guesses.. GameOver! ")
+			wordPlaceHolder = []
+			rapper = ""
+			break;
+		}
+	};
+
+	wordPlaceHolder = spacesSplit
+
+	$("#placeHolder").html(wordPlaceHolder);
+
+
+};		
+
+function winCheck(){
+
+		if (rapper == wordPlaceHolder.join("") && guessCount <= 15){
+			
+			
+				if (rapper == "nas"){
+
+					$("#rapperImage").backstretch("assets/images/nas.jpg");
+					$("#rapperImage").append('<audio autoplay><source src="assets/audio/nas.m4a" type="audio/mpeg"></audio>')
+				}
+				else if (rapper == "jayz"){
+					 $("#rapperImage").backstretch("assets/images/jayz.jpg");
+					 $("#rapperImage").append('<audio autoplay><source src="assets/audio/jayz.m4a" type="audio/mpeg"></audio>')	
+				}
+				else if (rapper == "bigpun"){
+					 $("#rapperImage").backstretch("assets/images/bigpun.jpg") 
+					 $("#rapperImage").append('<audio autoplay><source src="assets/audio/bigpun.m4a" type="audio/mpeg"></audio>');
+
+				}else if (rapper == "tupac"){
+					 $("#rapperImage").backstretch("assets/images/tupac.jpg"); 
+					 $("#rapperImage").append('<audio autoplay><source src="assets/audio/tupac.m4a" type="audio/mpeg"></audio>');
+				}
+				else if (rapper == "biggiesmalls"){
+					 $("#rapperImage").backstretch("assets/images/biggie.jpg"); 
+					 $("#rapperImage").append('<audio autoplay><source src="assets/audio/biggie.m4a" type="audio/mpeg"></audio>');
+				};
+			winCount += 1
+			$("#totalWins").html(winCount);
+			startGame();
+			
+		};
+};
+
+function gameBoardUpdate(){
+
+	guessCount+= 1
+	 $("#guessCount").html(guessCount);
+			
+	lettersGuess += userGuess
+	 $("#letterGuess").html(lettersGuess);
+			
+	guessLeft -= 1
+	 $("#remainingGuess").html(guessLeft);
+};
+
+function startGame(){
+			wordPlaceHolder = []
+			lettersGuess = ""
+			guessCount = 0
+			rapper = ""
+			guessLeft = 15
+			
+			newRappper();
+			startingSpaces();
+
+};
+
+function newGame(){
+
+			wordPlaceHolder = []
+			lettersGuess = ""
+			guessCount = 0
+			rapper = ""
+			guessLeft = 15
+			winCount = 0
+			newRappper();
+			startingSpaces();
+
+			
+			$("#guessCount").empty();
+			$("#letterGuess").empty();
+			$("#remainingGuess").empty();
+			$("#totalWins").empty();
+
+
+}
+
+
+
+$(document).ready(function(){
+
+	startGame();
+	
+	
+
+ $.backstretch("assets/images/newback.jpg");
+ $("#rapperImage").backstretch("assets/images/90hiphop.jpg")
+
+});
+
+
+
+
+// event listener when keys are entered(lifted)
 document.onkeyup = function(event){
 	
 	
+	userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
-	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-
-
+	testGuess();
 	
-
-	if (game.rapper == ""){
-
-		game.rapper = game.rappers[Math.floor( Math.random() * game.rappers.length)]
-	};
+	gameBoardUpdate();
+	winCheck();
 	
-
-	if (game.wordPlaceHolder == ""){
-
-		for (i= 0; i < game.rapper.length - 1; i++){
-
-				game.wordPlaceHolder = game.wordPlaceHolder + "_" 
-			};
-		document.querySelector("#placeHolder").innerHTML = game.wordPlaceHolder
-	};
-
-	for (var i = 0; i < game.rapper.length; i++) {
-		
-		if (game.rapper[i] === userGuess && game.guessCount < 15){
-			game.wordPlaceHolder= game.wordPlaceHolder.replaceAt(i ,game.rapper[i]);
-			document.querySelector("#placeHolder").innerHTML = game.wordPlaceHolder
-			
-
-		}else if(game.rapper[i] === userGuess && game.guessCount > 15){
-			alert("Sorry too Many Guesses.. GameOver! ")
-			game.wordPlaceHolder = []
-			game.rapper = ""
-			break;
-		}
-
-
-	};
-
-		if (game.rapper.includes(userGuess)){
-			alert( "You are correct !")
-			}
-		else{ 
-			alert("Sorry you are wrong !")
-			}	
-		;
-
-		if (game.rapper === game.wordPlaceHolder && game.guessCount <= 15){
-			alert("You win!!")
-			
-				if (game.rapper === "nas"){
-
-					document.querySelector("#pic_container").innerHTML = '<img src="assets/images/nas.jpg" id="nas"> <audio autoplay><source src="assets/audio/nas.m4a" type="audio/mpeg"></audio>'
-				}
-				else if (game.rapper === "jayz"){
-					document.querySelector("#pic_container").innerHTML = '<img src="assets/images/jayz.jpg" id="jayz"><audio autoplay><source src="assets/audio/jayz.m4a" type="audio/mpeg"></audio>'
-				}
-				else if (game.rapper === "bigpun"){
-					document.querySelector("#pic_container").innerHTML = '<img src="assets/images/bigpun.jpg" id="bigpun"><audio autoplay><source src="assets/audio/bigpun.m4a" type="audio/mpeg"></audio>'
-
-				}else if (game.rapper === "tupac"){
-					document.querySelector("#pic_container").innerHTML = '<img src="assets/images/tupac.jpg" id = "tupac"><audio autoplay><source src="assets/audio/tupac.m4a" type="audio/mpeg"></audio>'
-				}
-				else if (game.rapper === "biggiesmalls"){
-					document.querySelector("#pic_container").innerHTML = '<img src="assets/images/biggie.jpg" id="big"><audio autoplay><source src="assets/audio/biggie.m4a" type="audio/mpeg"></audio>'
-				};
-			
-			game.wordPlaceHolder = ""
-			game.winCount += 1
-			game.lettersGuess = ""
-			game.guessCount = 0
-			game.rapper = ""
-			game.guessLeft = 15
-		};
-
-
-	game.guessCount+= 1
-	document.querySelector("#guessCount").innerHTML = game.guessCount
-			
-	game.lettersGuess += userGuess
-	document.querySelector("#letterGuess").innerHTML = game.lettersGuess
-			
-	game.guessLeft -= 1
-	document.querySelector("#remainingGuess").innerHTML = game.guessLeft
-
-
-	
-	
-	
-
 };
 
-};
+$("#startButton").click(function(){
+
+	newGame();
+})
+
 
 

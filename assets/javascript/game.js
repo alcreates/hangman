@@ -157,12 +157,14 @@ $(document).ready(function(){
 	
 	
 
- $.backstretch("assets/images/newback.jpg");
- $("#rapperImage").backstretch("assets/images/90hiphop.jpg")
+ $.backstretch("assets/images/hiphopbg.jpg");
+ $("#rapperImage").backstretch("assets/images/mtvrapsbackground.jpg");
 
 });
 
+$("#logo").append("<img class='materialboxed' width='100' src='assets/images/mtvraps.jpg'>");
 
+$("#gameBoardback").backstretch("assets/images/pumamtvraps.jpg")
 
 
 // event listener when keys are entered(lifted)
